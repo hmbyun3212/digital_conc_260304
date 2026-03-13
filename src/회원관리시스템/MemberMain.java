@@ -21,9 +21,9 @@ public class MemberMain {
             switch (menu) {
 
                 case 1:
+                    sc.nextLine();
                     System.out.print("이름 입력: ");
                     String name = sc.nextLine();
-                    sc.nextLine();
                     System.out.print("아이디 입력: ");
                     String userId = sc.nextLine();
                     boolean isDuplicate = false;
@@ -70,7 +70,7 @@ public class MemberMain {
                         if (loginMember.login(loginId, loginPw)) {
                             // ★ 중요: name 대신 loginMember.getName()을 사용해야 해당 회원의 이름이 나옵니다.
                             // (Member 클래스에 getName() 메서드가 있어야 합니다)
-                            System.out.println("로그인 성공! 환영합니다. " + loginMember.getName() + "님");
+                            System.out.println("로그인 성공! 환영합니다, " + loginMember.getName() + "님");
 
                             // 인증 성공 시 수행할 서브 메뉴
                             while (true) {
