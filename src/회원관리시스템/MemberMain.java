@@ -1,6 +1,6 @@
 package 회원관리시스템;
 
-import 은행ArrayList.NewBank;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,7 +17,7 @@ public class MemberMain {
             System.out.print("메뉴 선택 : ");
             int menu = sc.nextInt();
 
-            if (menu == 6) break;
+
             switch (menu) {
 
                 case 1:

@@ -56,7 +56,7 @@ public class Member {
         this.age = age;
     }
     public void printInfo() {
-        System.out.println("회원번호 : " + id + "이름 : " + name + "아이디 : " + userId + "나이 : " + age);
+        System.out.println("회원번호 : " + id + ", 이름 : " + name + ", 아이디 : " + userId + ", 나이 : " + age);
     }
 }
 
