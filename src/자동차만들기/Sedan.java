@@ -19,4 +19,6 @@ public class Sedan extends Car {
             System.out.println("트렁크 좌석화가 해제되었습니다.");
         }
     }
+
 }
+

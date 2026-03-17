@@ -19,4 +19,10 @@ public class Bus extends Car {
             System.out.println("보조 연료탱크 사용을 중지합니다.");
         }
     }
+    @Override
+    public void Audio(boolean isOn) {
+        System.out.println(this.name + "는 오디오 기능을 지원하지 않습니다.");
+    }
+
+
 }

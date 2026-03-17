@@ -28,10 +28,13 @@ public class CarMain {
                 System.out.println("잘못된 지역 선택입니다.");
                 return;
         }
-
-
+        int passCnt = 0;
+    while (true) {
         System.out.print("이동할 승객 수를 입력하세요 (1~100명) : ");
-        int passCnt = sc.nextInt();
+        passCnt = sc.nextInt();
+        if (passCnt > 0 && passCnt < 101) break;
+        System.out.println("승객 수는 1~100명 사이어야 합니다.");
+    }
 
 
         Car car = null;
@@ -94,6 +97,23 @@ public class CarMain {
                 System.out.println("잘못된 입력입니다. 1, 2, 3번 중에서 선택해주세요.");
             }
         }
+        while (true) {
+            System.out.println("\n[ 추가 기능 설정 ] 1.에어컨 2.오디오 3.자율주행 4.설정완료");
+            System.out.print("선택 : ");
+            int choice = sc.nextInt();
+            if (choice == 4) break;
+
+            System.out.print("상태 [1]ON [2]OFF : ");
+            boolean status = (sc.nextInt() == 1);
+
+            switch (choice) {
+                case 1: car.Aircon(status); break;
+                case 2: car.Audio(status); break;
+                case 3: car.AutoPilot(status); break;
+            }
+        }
+
+
 
 
         System.out.println("\n========= 이동 결과 =========");
@@ -101,12 +121,16 @@ public class CarMain {
         System.out.println("주유 횟수 : " + car.refuel(distance, car.moveCnt(passCnt)) + "회");
 
         // 매개변수 순서 주의: distance, speed, moveCnt, weatherWeight
-        double totalTime = car.distanceTime(distance, car.speed, car.moveCnt(passCnt), weather);
+        double totalTime = car.distanceTime(distance, car.moveCnt(passCnt), weather);
         int h = (int) totalTime;                         // 정수 부분만 취해서 '시간' 추출
         int m = (int) Math.round((totalTime - h) * 60);
-        System.out.printf("총 소요 시간 : %d시간 %d분\n", h, m);
+        System.out.printf("총 이동 시간 : %d시간 %d분\n", h, m);
 
         System.out.println("총 이동 횟수 : " + car.moveCnt(passCnt) + "회");
+        System.out.printf("에어컨: %s \n오디오: %s\n자율주행: %s\n",
+                car.isAircon() ? "ON" : "OFF",
+                car.isAudio() ? "ON" : "OFF",
+                car.isAutoPilot() ? "ON" : "OFF");
         System.out.println("============================");
     }
 }
