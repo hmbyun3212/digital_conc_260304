@@ -3,8 +3,17 @@ package 자동차만들기;
 import java.util.Scanner;
 
 public class CarMain {
+    private static void Aircon(boolean status) {
+    }
+
+    private static void Audio(boolean status) {
+    }
+
+    private static void AutoPilot(boolean status) {
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
 
 
         System.out.println("\n[1] 부산(400km) [2] 대전(150km) [3] 강릉(200km) [4] 광주(300km)");
@@ -97,21 +106,34 @@ public class CarMain {
                 System.out.println("잘못된 입력입니다. 1, 2, 3번 중에서 선택해주세요.");
             }
         }
-        while (true) {
-            System.out.println("\n[ 추가 기능 설정 ] 1.에어컨 2.오디오 3.자율주행 4.설정완료");
-            System.out.print("선택 : ");
-            int choice = sc.nextInt();
-            if (choice == 4) break;
 
-            System.out.print("상태 [1]ON [2]OFF : ");
-            boolean status = (sc.nextInt() == 1);
+        // 1. 먼저 모든 부가기능 입력을 받습니다.
+        System.out.println("에어컨 : [1]ON [2]OFF");
+        int airconInput = sc.nextInt();
 
-            switch (choice) {
-                case 1: car.Aircon(status); break;
-                case 2: car.Audio(status); break;
-                case 3: car.AutoPilot(status); break;
-            }
+        System.out.println("오디오 [1]ON [2]OFF");
+        int audioInput = sc.nextInt();
+
+        System.out.println("자율주행 [1]ON [2]OFF");
+        int autoPilotInput = sc.nextInt();
+
+
+        if (car instanceof SportCar) {
+            SportCar scCar = (SportCar) car;
+            scCar.Aircon(airconInput == 1);
+            scCar.Audio(audioInput == 1);
+        } else if (car instanceof Sedan) {
+            Sedan sdCar = (Sedan) car;
+            sdCar.Aircon(airconInput == 1);
+            sdCar.Audio(audioInput == 1);
+            sdCar.AutoPilot(autoPilotInput == 1);
+        } else if (car instanceof Bus) {
+            Bus busCar = (Bus) car;
+            busCar.Aircon(airconInput == 1);
+            busCar.AutoPilot(autoPilotInput == 1);
         }
+
+
 
 
 
@@ -133,4 +155,6 @@ public class CarMain {
                 car.isAutoPilot() ? "ON" : "OFF");
         System.out.println("============================");
     }
+
+
 }

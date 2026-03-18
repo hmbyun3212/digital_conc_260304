@@ -1,6 +1,6 @@
 package 자동차만들기;
 
-public class Bus extends Car {
+public class Bus extends Car implements BusInterface {
     private boolean isTankOn = false; //
 
     public Bus(String name) {
@@ -19,10 +19,17 @@ public class Bus extends Car {
             System.out.println("보조 연료탱크 사용을 중지합니다.");
         }
     }
+
+
+
+
     @Override
-    public void Audio(boolean isOn) {
-        System.out.println(this.name + "는 오디오 기능을 지원하지 않습니다.");
+    public void Aircon(boolean isOn) {
+
     }
 
+    @Override
+    public void AutoPilot(boolean isOn) {
 
+    }
 }

@@ -20,5 +20,13 @@ public class Sedan extends Car {
         }
     }
 
+    public void Aircon(boolean b) {
+    }
+
+    public void Audio(boolean b) {
+    }
+
+    public void AutoPilot(boolean b) {
+    }
 }
 

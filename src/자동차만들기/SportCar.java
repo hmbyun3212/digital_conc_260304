@@ -1,7 +1,8 @@
 package 자동차만들기;
 
-public class SportCar extends Car {
+public class SportCar extends Car implements SportCarInterface {
     private boolean isTurboOn = false;
+
     public SportCar(String name) {
         super(250, 8.0, 30, 2, name);
     }
@@ -20,11 +21,20 @@ public class SportCar extends Car {
         }
     }
     @Override
-    public void AutoPilot(boolean isOn) {
-        // 자율주행 기능 없음 -> 아무 처리도 하지 않거나 경고
-        System.out.println(this.name + "은 자율주행 기능을 지원하지 않습니다.");
+    public void Aircon(boolean isOn) {
+        this.isAircon = isOn;
+        System.out.println(name + " 에어컨을 " + (isOn ? "켭니다." : "끕니다."));
     }
 
-
+    @Override
+    public void Audio(boolean isOn) {
+        this.isAudio = isOn;
+        System.out.println(name + " 오디오를 " + (isOn ? "켭니다." : "끕니다."));
+    }
 
 }
+
+
+
+
+

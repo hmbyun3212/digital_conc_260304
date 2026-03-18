@@ -1,6 +1,6 @@
 package 자동차만들기;
 
-public abstract class Car implements CarInterface {
+public abstract class Car  {
     protected int speed;
     protected double mileage;
     protected int tank;
@@ -57,24 +57,6 @@ public abstract class Car implements CarInterface {
 
     public abstract void setMode(boolean isOn);
 
-    // 인터페이스 메서드 구현
-    @Override
-    public void Aircon(boolean isOn) {
-        this.isAircon = isOn;
-        System.out.println(name + " 에어컨을 " + (isOn ? "켭니다." : "끕니다."));
-    }
-
-    @Override
-    public void Audio(boolean isOn) {
-        this.isAudio = isOn;
-        System.out.println(name + " 오디오를 " + (isOn ? "켭니다." : "끕니다."));
-    }
-
-    @Override
-    public void AutoPilot(boolean isOn) {
-        this.isAutoPilot = isOn;
-        System.out.println(name + " 자율주행을 " + (isOn ? "시작합니다." : "종료합니다."));
-    }
 
     // 상태 출력을 위한 Getter (Main에서 사용)
     public boolean isAircon() { return isAircon; }
