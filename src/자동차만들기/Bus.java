@@ -21,15 +21,15 @@ public class Bus extends Car implements BusInterface {
     }
 
 
-
-
     @Override
     public void Aircon(boolean isOn) {
-
+        this.isAircon = isOn;
+        System.out.println(name + " 에어컨을 " + (isOn ? "켭니다." : "끕니다."));
     }
 
     @Override
     public void AutoPilot(boolean isOn) {
-
+        this.isAutoPilot = isOn;
+        System.out.println(name + " 자율주행을 " + (isOn ? "시작합니다." : "종료합니다."));
     }
 }

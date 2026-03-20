@@ -3,14 +3,7 @@ package 자동차만들기;
 import java.util.Scanner;
 
 public class CarMain {
-    private static void Aircon(boolean status) {
-    }
 
-    private static void Audio(boolean status) {
-    }
-
-    private static void AutoPilot(boolean status) {
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -128,9 +121,9 @@ public class CarMain {
             sdCar.Audio(audioInput == 1);
             sdCar.AutoPilot(autoPilotInput == 1);
         } else if (car instanceof Bus) {
-            Bus busCar = (Bus) car;
-            busCar.Aircon(airconInput == 1);
-            busCar.AutoPilot(autoPilotInput == 1);
+            Bus bus = (Bus) car;
+            bus.Aircon(airconInput == 1);
+            bus.AutoPilot(autoPilotInput == 1);
         }
 
 

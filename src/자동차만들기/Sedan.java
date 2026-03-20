@@ -1,6 +1,6 @@
 package 자동차만들기;
 
-public class Sedan extends Car {
+public class Sedan extends Car implements SedanInterface {
     private boolean seatOn = false;
 
     public Sedan(String name) {
@@ -20,13 +20,22 @@ public class Sedan extends Car {
         }
     }
 
-    public void Aircon(boolean b) {
+    @Override
+    public void Aircon(boolean isOn) {
+        this.isAircon = isOn;
+        System.out.println(name + " 에어컨을 " + (isOn ? "켭니다." : "끕니다."));
     }
 
-    public void Audio(boolean b) {
+    @Override
+    public void Audio(boolean isOn) {
+        this.isAudio = isOn;
+        System.out.println(name + " 오디오를 " + (isOn ? "켭니다." : "끕니다."));
     }
 
-    public void AutoPilot(boolean b) {
+    @Override
+    public void AutoPilot(boolean isOn) {
+        this.isAudio = isOn;
+        System.out.println(name + " 자율주행을 " + (isOn ? "시작합니다." : "중지합니다."));
     }
 }
 
